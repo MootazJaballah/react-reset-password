@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 function App() {
   const [password, setPassword] = useState("");
+  const [isSend, setIsSend] = useState(false);
 
   const urlParams = new URLSearchParams(window.location.search);
   const userId = urlParams.get("userId");
@@ -29,13 +30,18 @@ function App() {
     // Handle the response from the server
     const data = await response.json();
     console.log(data);
+    setIsSend(true);
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
 
-  return (
+  return isSend ? (
+    <div className="App">
+      <h1>Password Changed !</h1>
+    </div>
+  ) : (
     <div className="App">
       <h1>Set New Password</h1>
       <form onSubmit={handleSubmit}>
