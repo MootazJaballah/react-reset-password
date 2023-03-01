@@ -39,7 +39,7 @@ function App() {
 
   return isSend ? (
     <div className="App">
-      <h1>Password Changed !</h1>
+      <h1 style={{ color: "green" }}>Password Changed !</h1>
     </div>
   ) : (
     <div className="App">
