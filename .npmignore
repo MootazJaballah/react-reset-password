@@ -1,2 +1,7 @@
-*.log
-test/
+.*
+.*.json
+tsconfig.json
+tests
+demo
+coverage
+src
